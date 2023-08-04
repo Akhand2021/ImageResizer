@@ -23,7 +23,6 @@ class ImageController extends Controller
 
         $imagePath = $request->file('image')->store('public');
         $imageName = basename($imagePath);
-        // dd($imageName);
         // Resize the image
         $img = Resize::make(storage_path('app/' . $imagePath));
         $img->resize(300, 200);
